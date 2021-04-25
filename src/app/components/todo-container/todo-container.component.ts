@@ -6,12 +6,10 @@ import { Component, OnInit, HostBinding } from '@angular/core';
   styleUrls: ['./todo-container.component.scss']
 })
 export class TodoContainerComponent implements OnInit {
-
   @HostBinding('class') className = 'todo-container-component';
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

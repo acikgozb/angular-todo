@@ -1,0 +1,28 @@
+{{diagnostic}}
+<form
+  #addTodoForm="ngForm"
+  (ngSubmit)="onTodoSubmit($event, addTodoForm)"
+  class="todo-search-form"
+>
+  <label class="todo-input-label" for="add-todo-input">
+    <input
+      #todoInput="ngModel"
+      [(ngModel)]="todo.name"
+      id="add-todo-input"
+      name="add-todo-input"
+      type="text"
+      placeholder="Enter a task..."
+      class="todo-input"
+      autocomplete="off"
+    />
+  </label>
+  <button
+    [disabled]="!todoInput.value"
+    type="submit"
+    class="todo-add-button"
+  >
+    Add
+  </button>
+</form>
+
+
