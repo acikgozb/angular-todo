@@ -1,0 +1,8 @@
+<ul *ngIf="todoList.length !== 0" class='todo-list-wrapper'>
+  <app-todo-item *ngFor="let todo of todoList" [todo]="todo"></app-todo-item>
+<!--  <li *ngFor="let todo of todoList" class="todo-list-item">-->
+<!--    <span class="todo-name">{{todo.name}}</span>-->
+<!--    <app-button (clickHandler)="berk($event, todo)">Edit</app-button>-->
+<!--    <app-button (clickHandler)="berk($event, todo)" styleKey="delete">Delete</app-button>-->
+<!--  </li>-->
+</ul>

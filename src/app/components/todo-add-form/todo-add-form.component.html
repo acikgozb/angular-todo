@@ -1,4 +1,3 @@
-{{diagnostic}}
 <form
   #addTodoForm="ngForm"
   (ngSubmit)="onTodoSubmit($event, addTodoForm)"
@@ -16,13 +15,7 @@
       autocomplete="off"
     />
   </label>
-  <button
-    [disabled]="!todoInput.value"
-    type="submit"
-    class="todo-add-button"
-  >
-    Add
-  </button>
+  <app-button [disabled]="!todoInput.value" type="submit" styleKey="primary">Add</app-button>
 </form>
 
 

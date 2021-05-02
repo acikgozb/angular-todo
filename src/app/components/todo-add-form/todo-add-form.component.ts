@@ -1,8 +1,10 @@
 // libraries
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {NgForm} from '@angular/forms';
 // models
 import {Todo, createTodo} from '../../core/models/Todo/Todo';
+// services
+import {TodoService} from '../../core/services/TodoService/todo.service';
 
 
 @Component({
@@ -13,20 +15,14 @@ import {Todo, createTodo} from '../../core/models/Todo/Todo';
 export class TodoAddFormComponent implements OnInit {
   todo: Todo = createTodo();
 
-  constructor() { }
+  constructor(private todoService: TodoService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
-  get diagnostic(): string {
-      return JSON.stringify(this.todo);
-  }
-
-  onTodoSubmit(e: Event, todoForm: NgForm): void {
+  onTodoSubmit(e: Event, addTodoForm: NgForm): void {
     e.preventDefault();
-    // push to TodoArray.
-    todoForm.resetForm(createTodo());
-    return;
+    this.todoService.addTodo({...this.todo});
+    addTodoForm.resetForm();
   }
 
 }

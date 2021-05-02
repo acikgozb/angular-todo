@@ -1,0 +1,8 @@
+<button
+  [disabled]="disabled"
+  [type]="type"
+  [ngClass]="['button-wrapper', styleKey]"
+  (click)='buttonClick($event)'
+>
+  <ng-content></ng-content>
+</button>

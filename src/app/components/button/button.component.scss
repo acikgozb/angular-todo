@@ -1,0 +1,48 @@
+$button-type-map: (
+  primary: (
+    color: #fff,
+    background-color: #1abc9c
+  ),
+  delete: (
+    color: #fff,
+    background-color: red
+  )
+);
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  padding: 8px 20px;
+  cursor: pointer;
+  background-color: #1abc9c;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  @each $type, $typeStyles in $button-type-map {
+    $color: map-get($typeStyles, color);
+    $background-color: map-get($typeStyles, background-color);
+
+    &.#{$type} {
+      background-color: $background-color;
+      color: $color;
+
+      &:hover {
+        background-color: darken($background-color, 10);
+      }
+
+      &:active {
+        background-color: darken($background-color, 20);
+      }
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    background-color: #cccccc;
+    color: #919191;
+  }
+}

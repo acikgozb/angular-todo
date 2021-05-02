@@ -1,0 +1,5 @@
+<li class="todo-list-item">
+  <span class="todo-name">{{todo.name}}</span>
+  <app-button (clickHandler)="toggleEditing($event)">Edit</app-button>
+  <app-button (clickHandler)="deleteTodo($event)" styleKey="delete">Delete</app-button>
+</li>
